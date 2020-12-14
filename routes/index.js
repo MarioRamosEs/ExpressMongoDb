@@ -10,6 +10,10 @@ router.get('/test', function(req, res, next) {
   res.send('test');
 });
 
+router.post('/echo', async function(req, res, next) {
+  return res.send(JSON.stringify(req.body));
+});
+
 router.get('/env', function(req, res, next) {
   res.send(process.env.MY_SECRET);
 });

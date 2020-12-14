@@ -9,10 +9,17 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var fakeUsersRouter = require('./routes/fakeUsers');
 
-// MongoDB
-//import models, { connectDb } from './models';
-
 var app = express();
+
+// MongoDB
+import models, { connectDb } from './models';
+connectDb();
+app.use((req, res, next) => {
+  req.context = {
+    models,
+  };
+  next();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,12 +50,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-// MongoDB
-/*connectDb().then(async () => {
-  app.listen(process.env.PORT, () =>
-    console.log(`Example app listening on port ${process.env.PORT}!`),
-  );
-});*/
 
 module.exports = app;

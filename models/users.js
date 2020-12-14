@@ -7,17 +7,15 @@ const userSchema = new mongoose.Schema(
     },
     Name: {
       type: String,
-      unique: true,
-      required: true,
+      unique: false
     },
     Phone: {
         type: String,
-        unique: false,
-        required: false,
+        unique: false
       },
   }
 );
  
-const User = mongoose.model('User', userSchema);
+const Users = mongoose.model('Users', userSchema);
  
-export default User;
+export default Users;
