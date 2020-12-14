@@ -9,6 +9,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var fakeUsersRouter = require('./routes/fakeUsers');
 
+// MongoDB
+//import models, { connectDb } from './models';
+
 var app = express();
 
 // view engine setup
@@ -40,5 +43,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// MongoDB
+/*connectDb().then(async () => {
+  app.listen(process.env.PORT, () =>
+    console.log(`Example app listening on port ${process.env.PORT}!`),
+  );
+});*/
 
 module.exports = app;

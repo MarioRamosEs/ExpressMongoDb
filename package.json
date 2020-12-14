@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start2": "node ./bin/www",
-    "start": "nodemon ./bin/www"
+    "start": "nodemon --exec babel-node ./bin/www",
+    "startNodemonNoBabel": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -18,6 +19,9 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
     "nodemon": "^2.0.6"
   }
 }
