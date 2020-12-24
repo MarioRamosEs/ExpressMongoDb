@@ -12,7 +12,6 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   const user = await req.context.models.Users.create({
-    _id: new mongoose.mongo.ObjectId(),
     Name: req.body.Name,
     Phone: req.body.Phone
   });
