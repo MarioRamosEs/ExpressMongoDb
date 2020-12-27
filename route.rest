@@ -1,0 +1,36 @@
+GET http://localhost:3000/
+
+###
+POST  http://localhost:3000/echo
+Content-Type: application/json
+
+{
+    "name": "Test"
+}
+
+###
+GET http://localhost:3000/users/
+
+###
+GET http://localhost:3000/users/5fe48819d7e88f4bc63b8786
+
+###
+DELETE  http://localhost:3000/users/5fe48819d7e88f4bc63b8786
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "Name": "Test",
+    "Phone": "24039423"
+}
+
+###
+PATCH  http://localhost:3000/users/5fe88100df61c81350b65bab
+Content-Type: application/json
+
+{
+    "Name": "Juanlu",
+    "Phone": "1234"
+}

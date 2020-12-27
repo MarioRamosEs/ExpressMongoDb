@@ -11,7 +11,7 @@ router.get('/test', (req, res, next) => {
   res.send('test');
 });
 
-router.post('/echo', async (req, res, next) => res.send(JSON.stringify(req.body)));
+router.post('/echo', async (req, res, next) => res.send(req.body));
 
 router.get('/env', (req, res, next) => {
   res.send(process.env.MY_SECRET);
